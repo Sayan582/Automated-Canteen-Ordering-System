@@ -1,0 +1,28 @@
+<center>
+<h4>Create new food</h4>
+  <%= form_for @food do |f| %>
+        <%=f.text_field :name, :class => "validate" %>
+        <%= f.label :name %>
+        <div class = "error"><%= @food.errors.messages[:name][0] %></div>
+        <%=f.text_field :description, :class => "validate" %>
+        <%= f.label :description, :class => "active", "data-error" => "#{@food.errors.messages['description']}" %>
+        <div class = "error"><%= @food.errors.messages[:description][0] %></div>
+        <%=f.text_field :price, :class => "validate" %>
+        <%= f.label :price %>
+        <div class = "error"><%= @food.errors.messages[:price][0] %></div>
+      
+        <%=f.text_field :prep_time, :class => "validate" %>
+        <%= f.label "Prep time in mins" %>
+        <div class = "error"><%= @food.errors.messages[:prep_time][0] %></div>
+
+          <%= f.collection_select(:category_id, Category.all, :id, :title, {}, { :class => "select_box", :style => "display:block;" }) %>
+          <div class = "error"><%= @food.errors.messages[:category_id][0] %></div>
+
+        <%= f.file_field :food_image %>
+      <div class="food_upload_progress_bar">
+        <div class="determinate" style="width: 70%"></div>
+      </div>
+  <%= f.submit "Add food" %>
+  <% end %>
+
+</center>

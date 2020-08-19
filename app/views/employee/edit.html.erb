@@ -1,0 +1,13 @@
+<center>
+<h4>Edit Profile</h4>
+<%= form_for @employee do |e| %>
+      <%=e.text_field :ename, :class => "validate" %>
+      <%= e.label :ename %>
+      <div class = "error"><%= @employee.errors.messages[:ename][0] %></div>
+      <%=e.text_field :ephone, :class => "validate" %>
+      <%= e.label :ephone %>
+
+
+<%= e.submit "Save Changes" %>
+<% end %>
+</center>

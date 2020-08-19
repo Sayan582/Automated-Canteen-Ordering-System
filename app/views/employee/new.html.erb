@@ -1,0 +1,17 @@
+<center><h1>Create Employee Or Non-Employee Profile</h1>
+    <%= form_for :employee do |e| %>
+        <p>
+        <%= e.label :name %> <br>
+        <%= e.text_field :ename, required: true %>
+        </p>
+        <p>
+        <%= e.label :phone %> <br>
+        <%= e.number_field :ephone, required: true %>
+        </p>
+        <p>
+        <%= e.label :company%>
+        <%= select_tag(:ecompany, options_for_select([['ABC', 1], ['DEF', 2], ['Others', 3]])), required: true %>
+        </p>
+        <%= e.submit %>
+    <% end %>
+</center>

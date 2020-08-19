@@ -1,0 +1,10 @@
+<center><h1>Welcome To Canteen Ordering System (COS)</h1>
+
+    <%= form_for(:welcome, url: login_path, html: { class: "login_form" }) do |f|%>
+      <%= f.label :email %>
+      <%= f.email_field :email, required: true %>
+      <%= f.submit "Log in", class: "btn btn-success" %>
+    <% end %>
+
+
+</center>

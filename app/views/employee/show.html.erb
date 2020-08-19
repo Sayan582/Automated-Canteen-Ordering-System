@@ -1,0 +1,12 @@
+<div class="row full-height">
+  <% if @employee %>
+    <p>Name: <%= @employee.ename %> </p>
+    <p>Phone: <%= @employee.ephone %></p>
+    <p><%= link_to "Edit Profile", edit_employee_path(@employee.id)  %></p>
+    <p><%= link_to "View Orders", :args => { :show_all => true , :title => "All Orders"} %></p>
+    <h4><%= @title %></h4>
+    <%= render "layouts/orders_page" %>
+  <% else %>
+    <p>There is no employee to display.</p>
+  <% end %>
+</div>
